@@ -1,0 +1,230 @@
+---
+active_content: active
+---
+
+
+<html>
+
+{% include head.html %}
+  <body>
+
+      {% include header.html %}
+      <div class="container">
+
+             <div class="row" style="margin-top: 85px; margin-bottom: 10px;">
+                  <div class="col-12">
+                        <h5 id="title"> {{ site.title2 }} </h5>
+                  </div>
+            </div>
+
+
+            <div class="yearOfProject">
+                    <div class="row">
+                        <div class="col-12 toggle toggle1 dropdown-toggle btn">
+                            <b>APROVADOS EM 2016</b>
+                        </div>
+                    </div>
+                    {%  for project in site.data.fileProjects %}
+                        {% if project.ano == "2016" %}
+                              <div class="row oculte oculte-background oculte1" style="padding: 8px">
+                                  <div class="col-3 item-projects">
+                                      <b>Nome projeto</b>
+                                      <br>
+                                      <p>
+                                          {{ project.nome }}
+                                      </p>
+                                  </div>
+                                  <div class="col-3 item-projects">
+                                      <b>Participantes</b>
+                                      <p>
+                                          <ol>
+                                              {% for aluno in project.alunos %}
+                                                  {% if aluno != "" %}
+                                                      <li>{{ aluno }}</li>
+                                                  {% endif %}
+                                              {% endfor %}
+                                              {% if project.aluno_bols != "" %}
+                                                  <li><span class="bolsista"><b>( BOLSA CONCEDIDA ) </b></span>{{ project.aluno_bols }}</li>
+                                              {% endif %}
+                                          </ol>
+
+                                      </p>
+                                  </div>
+                                  <div class="col-3 item-projects">
+                                      <b>Coordenadores</b>
+                                      <p>
+                                      <ol>
+
+                                          {% for coordenador in project.coordenador %}
+                                              {% if coordenador != "" %}
+                                                  <li>{{ coordenador }}</li>
+                                              {% endif %}
+                                          {% endfor %}
+
+
+                                          {% if project.coordenador_bols != "" %}
+                                              <li>
+                                                  <span class="bolsista"><b>( BOLSA CONCEDIDA ) </b></span>{{ project.coordenador_bols }}
+                                              </li>
+                                          {% endif %}
+                                      </ol>
+                                      </p>
+                                  </div>
+                                  <div class="col-3 item-projects">
+                                      <b>Detalhes</b>
+                                      <p></p>
+                                      {% include modal.html %}
+                                  </div>
+                              </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+            <div class="yearOfProject">
+                    <div class="row">
+                        <div class="col-12 toggle toggle2 dropdown-toggle btn">
+                            <b>APROVADOS EM 2017</b>
+                        </div>
+                    </div>
+                    {%  for project in site.data.fileProjects %}
+                        {% if project.ano == "2017" %}
+                              <div class="row oculte oculte-background oculte2" style="padding: 8px">
+                                  <div class="col-3 item-projects">
+                                      <b>Nome projeto</b>
+                                      <br>
+                                      <p>
+                                          {{ project.nome }}
+                                      </p>
+                                  </div>
+                                  <div class="col-3 item-projects">
+                                      <b>Participantes</b>
+                                      <p>
+                                          <ol>
+                                              {% for aluno in project.alunos %}
+                                                  {% if aluno != "" %}
+                                                      <li>{{ aluno }}</li>
+                                                  {% endif %}
+                                              {% endfor %}
+                                              {% if project.aluno_bols != "" %}
+                                                  <li><span class="bolsista"><b>( BOLSA CONCEDIDA ) </b></span>{{ project.aluno_bols }}</li>
+                                              {% endif %}
+                                          </ol>
+
+                                      </p>
+                                  </div>
+                                  <div class="col-3 item-projects">
+                                      <b>Coordenadores</b>
+                                      <p>
+                                      <ol>
+
+                                          {% for coordenador in project.coordenador %}
+                                              {% if coordenador != "" %}
+                                                  <li>{{ coordenador }}</li>
+                                              {% endif %}
+                                          {% endfor %}
+
+
+                                          {% if project.coordenador_bols != "" %}
+                                              <li>
+                                                  <span class="bolsista"><b>( BOLSA CONCEDIDA ) </b></span>{{ project.coordenador_bols }}
+                                              </li>
+                                          {% endif %}
+                                      </ol>
+                                      </p>
+                                  </div>
+                                  <div class="col-3 item-projects">
+                                      <b>Detalhes</b>
+                                      <p></p>
+                                      {% include modal.html %}
+                                  </div>
+                              </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+
+            <div class="yearOfProject">
+                    <div class="row">
+                        <div class="col-12 toggle toggle3 dropdown-toggle btn">
+                            <b>APROVADOS EM 2018</b>
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                      {%  for project in site.data.fileProjects %}
+                          {% if project.ano == "2018" %}
+                                <div class="row oculte-background oculte3" style="padding: 8px">
+                                    <div class="col-3 item-projects">
+                                        <b>Nome projeto</b>
+                                        <br>
+                                        <p>
+                                            {{ project.nome }}
+                                        </p>
+                                    </div>
+                                    <div class="col-3 item-projects">
+                                        <b>Participantes</b>
+                                        <p>
+                                            <ol>
+                                                {% for aluno in project.alunos %}
+                                                    {% if aluno != "" %}
+                                                        <li>{{ aluno }}</li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                {% if project.aluno_bols != "" %}
+                                                    <li><span class="bolsista"><b>( BOLSA CONCEDIDA ) </b></span>{{ project.aluno_bols }}</li>
+                                                {% endif %}
+                                            </ol>
+
+                                        </p>
+                                    </div>
+                                    <div class="col-3 item-projects">
+                                        <b>Coordenadores</b>
+                                        <p>
+                                        <ol>
+
+                                            {% for coordenador in project.coordenador %}
+                                                {% if coordenador != "" %}
+                                                    <li>{{ coordenador }}</li>
+                                                {% endif %}
+                                            {% endfor %}
+
+
+                                            {% if project.coordenador_bols != "" %}
+                                                <li>
+                                                    <span class="bolsista"><b>( BOLSA CONCEDIDA ) </b></span>{{ project.coordenador_bols }}
+                                                </li>
+                                            {% endif %}
+                                        </ol>
+                                        </p>
+                                    </div>
+                                    <div class="col-3 item-projects">
+                                        <b>Detalhes</b>
+                                        <p></p>
+
+                                        {% include modal.html %}
+                                    </div>
+                                </div>
+                          {% endif %}
+                      {% endfor %}
+                  </table>
+            </div>
+
+      </div>
+
+      <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <p><b>Coordenadoria de Pesquisa e Inovação</b></p>
+                </div>
+                <div class="col-4">
+                    <p><b>Coordenador:</b> Max Miller da Silveira</p>
+                </div>
+                <div class="col-4">
+                    <p><b>Feito por:</b> IFRN - Campus Caicó</p>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+
+</body>
+    <script src='js/behavior.js'></script>
+</html>

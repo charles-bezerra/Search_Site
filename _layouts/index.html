@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        {% include header.html %}
+        <div class="display">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-2">
+                      <img align='center' src="icons/logomarca.png" width="220px"/>
+                  </div>
+
+                  <div class="col-sm-6" align="left" style="margin-top: 80px">
+                      <h2>Vanha conhecer nossos
+                      projetos!</h2>
+                      <p>Nossos projetos te deixarão impressionados e de cabelos em pé.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="container">
+
+            <div class="line">
+                <div class="line1"><hr/></div>
+            </div>
+
+
+            <section id="features">
+                <h2 style="margin-bottom:18px">Notícias e Destaques</h2>
+                <div class="row content-news">
+                  {% include card-feature.html %}
+
+                </div>
+            </section>
+        </div>
+
+        {% include footer.html %}
+
+
+    </body>
+
+
+</html>
