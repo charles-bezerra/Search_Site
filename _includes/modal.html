@@ -3,7 +3,6 @@
       <i class="material-icons md-18">reorder</i>
 </button>
 
-
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="{{ project.id }}" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
 
@@ -22,7 +21,28 @@
                   <div class="modal-body">
                       <div class="container">
 
-                          
+                          <div class="row">
+                              <div class="col-3">
+                                  <h6><b>Nome projeto:</b></h6>
+                              </div>
+                              <div class='col-9'>
+                                  <h6>{{ project.nome }}</h6>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-3">
+                                  <h6><b>Coordenador(es)</b></h6>
+                              </div>
+                              <div class='col-9'>
+                                <ol>
+                                {% for coord in project.coordenador %}
+                                  <li>{{ coord }}</li>
+                                {% endfor %}
+                              </ol>
+                              </div>
+                          </div>
+
 
                       </div>
                   </div>

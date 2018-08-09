@@ -1,8 +1,3 @@
----
-active_content: active
----
-
-
 <html>
 
 {% include head.html %}
@@ -24,7 +19,7 @@ active_content: active
                             <b>APROVADOS EM 2016</b>
                         </div>
                     </div>
-                    {%  for project in site.data.fileProjects %}
+                    {%  for project in site.data.fileProjects-pesquisa %}
                         {% if project.ano == "2016" %}
                               <div class="row oculte oculte-background oculte1" style="padding: 8px">
                                   <div class="col-3 item-projects">
@@ -85,7 +80,7 @@ active_content: active
                             <b>APROVADOS EM 2017</b>
                         </div>
                     </div>
-                    {%  for project in site.data.fileProjects %}
+                    {%  for project in site.data.fileProjects-pesquisa %}
                         {% if project.ano == "2017" %}
                               <div class="row oculte oculte-background oculte2" style="padding: 8px">
                                   <div class="col-3 item-projects">
@@ -148,7 +143,7 @@ active_content: active
                         </div>
                     </div>
                     <table class="table table-striped">
-                      {%  for project in site.data.fileProjects %}
+                      {%  for project in site.data.fileProjects-pesquisa %}
                           {% if project.ano == "2018" %}
                                 <div class="row oculte-background oculte3" style="padding: 8px">
                                     <div class="col-3 item-projects">
