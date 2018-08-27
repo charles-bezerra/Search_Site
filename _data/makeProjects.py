@@ -1,7 +1,7 @@
 import json
 import sys
 class Projeto(object):
-    def  __init__(self, nome, alunos, aluno_bols, coordenador, coordenador_bols, resumo, ano, id=''):
+    def  __init__(self, nome, alunos, aluno_bols, coordenador, coordenador_bols, resumo, ano, edital, id=''):
         self.nome = nome
         self.alunos = alunos
         self.aluno_bols = aluno_bols
@@ -9,6 +9,7 @@ class Projeto(object):
         self.coordenador_bols = coordenador_bols
         self.resumo = resumo
         self.ano = ano
+        self.edital = edital
 
         if(id == ''):
             js0 = ''
@@ -69,12 +70,13 @@ class main(object):
             coordenador = input("Coordenador: ").split(', ')
             resumo = input("Resumo: ")
             ano = input("Ano: ")
+            edital = input("Numero do edital: ")
             if(count == 1):
-                p = Projeto(nome, alunos, aluno_bols, coordenador, coordenador_bols, resumo, ano)
+                p = Projeto(nome, alunos, aluno_bols, coordenador, coordenador_bols, resumo, ano, edital)
                 id_a = p.id
                 js.append(p.__dict__)
             else:
-                p = Projeto(nome, alunos, aluno_bols, coordenador, coordenador_bols, resumo, ano, id_a + count)
+                p = Projeto(nome, alunos, aluno_bols, coordenador, coordenador_bols, resumo, ano, edital, id_a + count)
                 js.append(p.__dict__)
 
             quit = input('Salvar? s/n: ')
