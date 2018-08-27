@@ -10,40 +10,74 @@
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 
             <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="modalTitle"><b>Projeto</b></h5>
+                  <div class="modal-header" style="background-color:#B5B5B5;">
+                      <b class="modal-title" id="modalTitle" style="color: white">Detalhes</b>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
                   </div>
 
 
-                  <div class="modal-body">
+                  <div class="modal-body" style="background-color:#F8F8FF">
                       <div class="container">
+                          <div class="row">
+                              <label><b>Nome do projeto</b></label>
+                              <div class="col-12">
+                                  <p>{{ project.nome }}</p>
+                              </div>
+                          </div>
+                      
+                          <hr style="width:100%" />
+                      
+                          <div class="row">
+                              <label><b>Coordenador(es)</b></label>
+                              <div class="col-12">
+                                <p>
+                                  <ol>
+                                      {% for coordenador in project.coordenador %}
+                                          {% if coordenador != "" %}
+                                              <li> {{ coordenador }} </li>
+                                          {% endif %}
+                                      {% endfor %}
+                                      {% if project.coordenador_bols != "" %}
+                                          <li> {{ project.coordenador_bols }}<span class="bolsista"><b> ( COM BOLSA )</b></span> </li>
+                                      {% endif %}
+                                  </ol>
+                                </p>
+                              </div>
+                          </div>
+                          
+                          <hr style="width:100%" />
 
                           <div class="row">
-                              <div class="col-3">
-                                  <h6><b>Nome projeto:</b></h6>
-                              </div>
-                              <div class='col-9'>
-                                  <h6>{{ project.nome }}</h6>
+                              <label><b>Participantes</b></label>
+                              <div class="col-12">
+                                <p>
+                                    <ol>
+                                         {% for participantes in project.alunos %}
+                                            {% if participantes != "" %}
+                                                <li>{{ participantes }}</li>
+                                            {% endif %}
+                                         {% endfor %}
+                                         {% if project.aluno_bols != "" %}
+                                              <li>{{ project.aluno_bols }}<span class="bolsista"><b> ( COM BOLSA )</b></span></li>
+                                         {% endif %}
+                                    </ol>
+                                </p>
                               </div>
                           </div>
 
+                          <hr style="width:100%" />
+
                           <div class="row">
-                              <div class="col-3">
-                                  <h6><b>Coordenador(es)</b></h6>
-                              </div>
-                              <div class='col-9'>
-                                <ol>
-                                {% for coord in project.coordenador %}
-                                  <li>{{ coord }}</li>
-                                {% endfor %}
-                              </ol>
+                              <label><b>Resumo</b></label>
+                              <div class="col-12">
+                                <p>
+                                  {{ project.resumo }}
+                                </p>
                               </div>
                           </div>
-
-
+                      
                       </div>
                   </div>
 
