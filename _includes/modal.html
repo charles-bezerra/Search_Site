@@ -1,7 +1,9 @@
 <!-- Button trigger modal -->
-<button class="btn btn-secondary" role="button" data-toggle="modal" data-target="#{{ project.id }}">
-      <i class="material-icons md-18">reorder</i>
-</button>
+<div align="center" style="width:100%;">
+    <button class="btn btn-secondary" role="button" data-toggle="modal" data-target="#{{ project.id }}">
+          <i class="material-icons md-18">reorder</i>
+    </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="{{ project.id }}" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
@@ -10,7 +12,8 @@
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 
             <div class="modal-content">
-                  <div class="modal-header" style="background-color:#B5B5B5;">
+                  
+                  <div class="modal-header" style="background-color:#828282;">
                       <b class="modal-title" id="modalTitle" style="color: white">Detalhes</b>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
@@ -18,20 +21,21 @@
                   </div>
 
 
-                  <div class="modal-body" style="background-color:#F8F8FF">
+                  <div class="modal-body" style="background-color:#EEEEE0">
                       <div class="container">
+                          
                           <div class="row">
-                              <label><b>Nome do projeto</b></label>
                               <div class="col-12">
+                                  <label><b>Nome do projeto</b></label>
                                   <p>{{ project.nome }}</p>
                               </div>
                           </div>
-                      
-                          <hr style="width:100%" />
-                      
-                          <div class="row">
-                              <label><b>Coordenador(es)</b></label>
+
+                          <hr/>
+                          
+                          <div class="row">                            
                               <div class="col-12">
+                                <label><b>Coordenador(es)</b></label>
                                 <p>
                                   <ol>
                                       {% for coordenador in project.coordenador %}
@@ -47,11 +51,11 @@
                               </div>
                           </div>
                           
-                          <hr style="width:100%" />
-
+                          <hr/>
+                          
                           <div class="row">
-                              <label><b>Participantes</b></label>
                               <div class="col-12">
+                                <label><b>Participantes</b></label>
                                 <p>
                                     <ol>
                                          {% for participantes in project.alunos %}
@@ -66,13 +70,13 @@
                                 </p>
                               </div>
                           </div>
-
-                          <hr style="width:100%" />
-
+                          
+                          <hr/>
+                          
                           <div class="row">
-                              <label><b>Resumo</b></label>
-                              <div class="col-12">
-                                <p>
+                              <div class="col-12 ">
+                                <label><b>Resumo</b></label>
+                                <p class="text-body">
                                   {{ project.resumo }}
                                 </p>
                               </div>
@@ -81,9 +85,48 @@
                       </div>
                   </div>
 
+                  <div class="modal-header" style="background-color:#828282; border: 0; border-radius: 0">
+                      <b class="modal-title" id="modalTitle" style="color: white">Dados do projeto</b>
+                  </div>
+
+                  <div class="modal-body" style="background-color:#EEEEE0">
+                      <div class="container">
+                          
+                          <div class="row">
+                              <div class="col-12">
+                                  <p>
+                                      <b>Edital: </b><span class="text-90"> {{ project.edital }}</span>
+                                  </p>
+                              </div>
+                          </div>
+                          
+                          <hr/>
+                          
+                          <div class="row">
+                            <div class="col-12">
+                                <p>
+                                  <b>Grupo de pesquisa: </b><span class="text-90">{{ project.grupo }}</span>
+                                </p>
+                            </div>
+                          </div>
+                          
+                          <hr/>
+                          
+                          <div class="row">
+                            <div class="col-12">
+                                <p>
+                                  <b>Campus: </b><span class="text-90">{{ project.campus }}</span>
+                                </p>
+                            </div>
+                          </div>
+
+                      </div>
+                  </div>
+
                   <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                   </div>
+            
             </div>
 
       </div>

@@ -147,14 +147,14 @@
                           {% if project.ano == "2018" %}
                                 <div class="row oculte-background oculte3" style="padding: 8px">
                                     <div class="col-3 item-projects">
-                                        <b>Nome projeto</b>
-                                        <br>
-                                        <p>
+                                        
+                                        <b><p class='text-align-center'>Nome projeto</p></b>
+                                        <p class="text-body">
                                             {{ project.nome }}
                                         </p>
                                     </div>
                                     <div class="col-3 item-projects">
-                                        <b>Participantes</b>
+                                        <b><p class='text-align-center'>Participantes</p></b>
                                         <p>
                                             <ol>
                                                 {% for aluno in project.alunos %}
@@ -170,7 +170,7 @@
                                         </p>
                                     </div>
                                     <div class="col-3 item-projects">
-                                        <b>Coordenadores</b>
+                                        <b><p class='text-align-center'>Coordenadores</p></b>
                                         <p>
                                         <ol>
 
@@ -190,9 +190,8 @@
                                         </p>
                                     </div>
                                     <div class="col-3 item-projects">
-                                        <b>Detalhes</b>
-                                        <p></p>
-
+                                        <b><p class='text-align-center'>Detalhes</p></b>
+                                        <br/>
                                         {% include modal.html %}
                                     </div>
                                 </div>
