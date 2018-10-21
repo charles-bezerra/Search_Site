@@ -26,17 +26,17 @@
 }
 .item-projects .bolsista b{
             color:green;
-            font-size: 90%;
+            font-size: 100%;
             font-family: "Gill Sans", sans-serif;
 }
 .item-projects ol{
             text-align: left;
-            font-size: 90%;
+            font-size: 80%;
 }
 .item-projects p{
-            font-size: 100%;
+            font-size: 80%;
             margin: auto;
-            padding: 5px;
+            padding: 8px;
 }
 #shandow-1{
             box-shadow: 4px 4px 2.5px #aaaaaa;
@@ -57,13 +57,13 @@
 .display{
             width: 100%;
             margin-top: 55px;
-            padding: 40px;
+            padding: 30px;
             min-height: 200px;
             background-color: #f3efef;
             background: linear-gradient(to right, #EEE9E9, #FFFFFF);
 }
 .yearOfProject{
-            margin-bottom: 10px;
+            margin-bottom: 18px;
             width: 100%;
 }
 .oculte-background{
@@ -89,7 +89,7 @@
 }
 .text-body{
             text-align: justify;
-            text-indent: 30px;
+            text-indent: 10px;
 }
 footer{
            margin:0;

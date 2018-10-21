@@ -50,13 +50,23 @@ def saveOnFile(js):
 
     aux = json.dumps(js)
 
-    with open('fileProjects-pesquisaf.json', 'w') as file:
+    with open('fileProjects-pesquisa.json', 'w') as file:
         file.write(aux)
 
 
 
     print(js0[14]['id'])
     return 0
+
+def createYears()
+    dados = ''
+    anos = []
+    with open('fileProjects-pesquisa.json', 'r') as file:
+        dados = file.read()
+    objs = json.loads(dados)
+
+    for obj in objs:
+        pass
 
 class main(object):
     js = []
