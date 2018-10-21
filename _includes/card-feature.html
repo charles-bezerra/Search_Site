@@ -1,36 +1,55 @@
-<div class="col-md-3">
-      <div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   <a href="#" class="btn" style="background-color:#2f9e41;color:white">Ver mais</a>
-            </div>
-      </div>
-</div>
-<div class="col-md-3">
-      <div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   <a href="#" class="btn" style="background-color:#2f9e41;color:white">Ver mais</a>
-            </div>
-      </div>
-</div>
-<div class="col-md-3">
-      <div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   <a href="#" class="btn" style="background-color:#2f9e41;color:white">Ver mais</a>
-            </div>
-      </div>
-</div>
-<div class="col-md-3">
-      <div class="card" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   <a href="#" class="btn" style="background-color:#2f9e41;color:white">Ver mais</a>
-            </div>
-      </div>
-</div>
+{% for news in site.data.NewsPesquisa %}
+  <div class="col-md-3">
+        <div class="card" style=" width: 100%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+              <div class="card-body">
+                    
+                    <h5 class="card-title">
+                        {{ news.titulo }}
+                    </h5>
+                    
+                    <p class="card-text text-news">
+                        {{ news.resumo }}
+                    </p>
+
+                    <a href="{{ news.link }}" class="btn" style="background-color:#2f9e41;color:white">Ver mais</a>
+              
+              </div>
+        </div>
+  </div>
+{% endfor %}
+
+<script type="text/javascript">
+    
+    function reduzirTitulo(){
+        var tag = document.getElementsByClassName('card-title');
+        for (var i = 0; i < tag.length; i++) {
+            var valor = tag[i].innerHTML;
+            if(valor.length > 70){
+               var aux = "";
+                for(var j = 0; j < 72; j++){
+                    aux = aux + valor[j];
+                }   
+                tag[i].innerHTML = aux + " ...";
+            }
+        }
+    }
+    
+    function reduzirResumo(){
+        var tag = document.getElementsByClassName('text-news');
+        for (var i = 0; i < tag.length; i++) {
+            var valor = tag[i].innerHTML;
+            if(valor.length > 140){
+               var aux = "";
+                for(var j = 0; j < 140; j++){
+                    aux = aux + valor[j];
+                }   
+                tag[i].innerHTML = aux + " ...";
+            }
+        }
+    }
+
+    $(document).ready(function(){
+          reduzirTitulo();
+          reduzirResumo();
+    });
+</script>
