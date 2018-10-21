@@ -1,18 +1,32 @@
-{% for news in site.data.NewsPesquisa %}
+{% for new in site.data.NewsPesquisa %}
   <div class="col-md-3">
-        <div class="card" style=" width: 100%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div class="card" style=" width: 100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
               <div class="card-body">
                     
                     <h5 class="card-title">
-                        {{ news.titulo }}
+                        {{ new.titulo }}
                     </h5>
                     
                     <p class="card-text text-news">
-                        {{ news.resumo }}
-                    </p>
+                        {{ new.resumo }}
 
-                    <a href="{{ news.link }}" class="btn" style="background-color:#2f9e41;color:white">Ver mais</a>
-              
+                    </p>
+                    <button type="button" data-toggle="popover" id="{{ new.id }}" 
+                        title="{{ new.titulo }}"  data-content="{{ new.resumo }}" 
+                        style="background-color: white; border: none; color: blue; padding: 0; font-size: 80%">
+                        Mais ...
+                    </button>
+                    
+                    <script type="text/javascript">
+                        $('#{{ new.id }}').popover('hidden');
+                        $('#{{ new.id }}').popover('toggle');
+                    </script>
+                    
+                    <br/>
+                    <br/>
+
+                    <a href="{{ new.link }}" class="btn" style="background-color:#2f9e41;color:white">Ver mais</a>
+                    
               </div>
         </div>
   </div>
@@ -47,7 +61,6 @@
             }
         }
     }
-
     $(document).ready(function(){
           reduzirTitulo();
           reduzirResumo();
